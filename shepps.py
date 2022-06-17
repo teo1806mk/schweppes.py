@@ -10,7 +10,7 @@ p = "0"
 
 def email():
     gmail_user = 'karipidis2001theodor@gmail.com'
-    gmail_password = 'ddytgvcefbgzjnsi'
+    gmail_password = 'seydilyelaiccmih'
 
     sent_from = gmail_user
     to = ['teo2005lol@gmail.com', 'karipidis73@gmail.com', 'mariannavourakii@gmail.com', 'pdimis01@gmail.com']
@@ -63,7 +63,7 @@ k = 1
 time.sleep(2)
 pp = 0
 while p == "0":
-    time.sleep(60)
+    time.sleep(20)
     try:
         # getting gifts
         print('getting gifts')
@@ -74,7 +74,7 @@ while p == "0":
         for gift in gifts:
             class_name = gift.get_attribute('class')
             image_alt = gift.find_element(by=By.TAG_NAME, value='img').get_attribute('alt')
-            if class_name == 'prize-list-item item-active' and image_alt == 'Mi Electric Scooter - Xiaomi':
+            if class_name == 'prize-list-item item-active':# and image_alt == 'Mi Electric Scooter - Xiaomi':
                 p = "1"
     except:
         time.sleep(10)
