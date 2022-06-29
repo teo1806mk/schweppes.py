@@ -2,20 +2,32 @@ import time
 import smtplib
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import random
+import pywhatkit
 from playsound import playsound
 from datetime import datetime
 
 p = "0"
 
 
+def wach():
+    timwH = int(time.strftime("%H"))
+    tiemM = int(time.strftime("%M")) + 1
+    print(timwH, tiemM)
+    # syntax: phone number with country code, message, hour and minutes
+    pywhatkit.sendwhatmsg('+306987251300', 'bgika ta dora mpes grigora', timwH, tiemM)
+
+
 def email():
     gmail_user = 'karipidis2001theodor@gmail.com'
-    gmail_password = 'seydilyelaiccmih'
+    gmail_password = 'aycgoolksgisezyd'
 
     sent_from = gmail_user
-    to = ['teo2005lol@gmail.com', 'karipidis73@gmail.com', 'mariannavourakii@gmail.com', 'pdimis01@gmail.com']
-    subject = 'call theodor'
-    body = 'call TON Theodor'
+    to = ['teo2005lol@gmail.com', 'karipidis73@gmail.com', 'mariannavourakii@gmail.com', 'pdimis01@gmail.com',
+          'akis.paok2001@gmail.com']
+    subject = 'pare grigora thlefono ton thodori karypidi'
+    body = 'PARETILEFONO TON THODORI'
 
     email_text = """\
     From: %s
@@ -46,14 +58,14 @@ def paraskevas():
     driver.find_element(by=By.CSS_SELECTOR, value="#ces-form-submit-ces-sign-in-form").click()
     time.sleep(3)
     dora = driver.find_element(by=By.CSS_SELECTOR,
-                               value='#global-page-wrapper > div.scroll-content > main > div > div > div > div.split-layout__sidebar > div > div.default-sidebar__body > ul > li:nth-child(4) > a > div.label')
+                               value="#global-page-wrapper > div.scroll-content > main > div > div > div > div.split-layout__sidebar > div > div.default-sidebar__body > ul > li:nth-child(4) > a > div.label")
     time.sleep(3)
     dora.click()
 
 
-driver = webdriver.Chrome(executable_path=r"C:\Users\teo20\OneDrive\Υπολογιστής\bot sp\chromedriver.exe")
+driver = webdriver.Chrome(executable_path=r"A:\bot sp\chromedriver.exe")
 driver.set_window_size(1024, 800)
-url = f"https://www.schweppes.gr/login.php"
+url = (f"https://www.schweppes.gr/login.php")
 driver.get(url)
 
 time.sleep(5)
@@ -63,7 +75,8 @@ k = 1
 time.sleep(2)
 pp = 0
 while p == "0":
-    time.sleep(20)
+
+    time.sleep(36)
     try:
         # getting gifts
         print('getting gifts')
@@ -74,8 +87,11 @@ while p == "0":
         for gift in gifts:
             class_name = gift.get_attribute('class')
             image_alt = gift.find_element(by=By.TAG_NAME, value='img').get_attribute('alt')
-            if class_name == 'prize-list-item item-active':# and image_alt == 'Mi Electric Scooter - Xiaomi':
+            if class_name == 'prize-list-item item-active' and image_alt == 'Mi Electric Scooter - Xiaomi':
                 p = "1"
+            # if class_name == 'prize-list-item item-active' and image_alt == 'Eva Fuda - μπρελόκ κίτρινο & μαύρο':
+            #    p = '1'
+
     except:
         time.sleep(10)
         try:
@@ -101,6 +117,7 @@ while p == "0":
 
     if p != "0":
         email()
+        wach()
         playsound("Rick_Astley_-_Never_Gonna_Give_You_Up_Official_Music_Video[ConConverter.com].mp3")
     else:
         now = datetime.now()
