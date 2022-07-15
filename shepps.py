@@ -16,18 +16,17 @@ def wach():
     tiemM = int(time.strftime("%M")) + 1
     print(timwH, tiemM)
     # syntax: phone number with country code, message, hour and minutes
-    pywhatkit.sendwhatmsg('+306987251300', 'bgika ta dora mpes grigora', timwH, tiemM)
+    pywhatkit.sendwhatmsg('friend num', 'messeg', timwH, tiemM)
 
 
 def email():
-    gmail_user = 'karipidis2001theodor@gmail.com'
-    gmail_password = 'aycgoolksgisezyd'
+    gmail_user = 'yours@gmail.com'
+    gmail_password = 'Password'
 
     sent_from = gmail_user
-    to = ['teo2005lol@gmail.com', 'karipidis73@gmail.com', 'mariannavourakii@gmail.com', 'pdimis01@gmail.com',
-          'akis.paok2001@gmail.com']
-    subject = 'pare grigora thlefono ton thodori karypidi'
-    body = 'PARETILEFONO TON THODORI'
+    to = ['friend email']
+    subject = 'messeges'
+    body = 'text'
 
     email_text = """\
     From: %s
@@ -50,10 +49,10 @@ def email():
 def paraskevas():
     login = driver.find_element(by=By.ID, value="signInEmailAddress")
     login.click()
-    login.send_keys("hdjfic2001@gmail.com")
+    login.send_keys("login email")
     pascod = driver.find_element(by=By.ID, value="currentPassword")
     pascod.click()
-    pascod.send_keys("18062001!Ka")
+    pascod.send_keys("login Password")
     time.sleep(2)
     driver.find_element(by=By.CSS_SELECTOR, value="#ces-form-submit-ces-sign-in-form").click()
     time.sleep(3)
@@ -63,7 +62,7 @@ def paraskevas():
     dora.click()
 
 
-driver = webdriver.Chrome(executable_path=r"A:\bot sp\chromedriver.exe")
+driver = webdriver.Chrome(executable_path=r"path of driver")
 driver.set_window_size(1024, 800)
 url = (f"https://www.schweppes.gr/login.php")
 driver.get(url)
@@ -118,7 +117,7 @@ while p == "0":
     if p != "0":
         email()
         wach()
-        playsound("Rick_Astley_-_Never_Gonna_Give_You_Up_Official_Music_Video[ConConverter.com].mp3")
+        playsound("path of song")
     else:
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
