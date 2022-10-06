@@ -49,10 +49,10 @@ def email():
 def paraskevas():
     login = driver.find_element(by=By.ID, value="signInEmailAddress")
     login.click()
-    login.send_keys("login email")
+    login.send_keys("LOGIN EMAIL")
     pascod = driver.find_element(by=By.ID, value="currentPassword")
     pascod.click()
-    pascod.send_keys("login Password")
+    pascod.send_keys("LOGIN PASSWORD")
     time.sleep(2)
     driver.find_element(by=By.CSS_SELECTOR, value="#ces-form-submit-ces-sign-in-form").click()
     time.sleep(3)
@@ -62,7 +62,7 @@ def paraskevas():
     dora.click()
 
 
-driver = webdriver.Chrome(executable_path=r"path of driver")
+driver = webdriver.Chrome(executable_path=r"PATH FOLDER OF DRIVER")
 driver.set_window_size(1024, 800)
 url = (f"https://www.schweppes.gr/login.php")
 driver.get(url)
@@ -86,7 +86,7 @@ while p == "0":
         for gift in gifts:
             class_name = gift.get_attribute('class')
             image_alt = gift.find_element(by=By.TAG_NAME, value='img').get_attribute('alt')
-            if class_name == 'prize-list-item item-active' and image_alt == 'Mi Electric Scooter - Xiaomi':
+            if class_name == 'prize-list-item item-active' :#and image_alt == 'Mi Electric Scooter - Xiaomi':
                 p = "1"
             # if class_name == 'prize-list-item item-active' and image_alt == 'Eva Fuda - μπρελόκ κίτρινο & μαύρο':
             #    p = '1'
